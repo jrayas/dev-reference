@@ -1,5 +1,5 @@
-// __CACHE_VERSION__ is replaced by build.ts with a content hash on every build,
-// so a new deploy always busts the cache instead of serving stale assets.
+// The string below is replaced by build.ts with a content hash on every
+// build, so a new deploy always busts the cache instead of serving stale assets.
 const CACHE_VERSION = "__CACHE_VERSION__";
 const STATIC_CACHE = `dev-reference-static-${CACHE_VERSION}`;
 const DATA_CACHE = `dev-reference-data-${CACHE_VERSION}`;
