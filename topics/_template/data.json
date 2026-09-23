@@ -1,0 +1,43 @@
+{
+  "$schema": "../schema.json",
+  "$comment": "TEMPLATE — copy this folder to topics/<your-slug>/ and edit. JSON has no native comments, so this '$comment' key is the workaround: build.ts and validate.ts both ignore any key starting with '$'. Run 'npm run new-topic <slug>' to scaffold this automatically. Delete every $comment key or leave them — they are ignored either way.",
+
+  "topic": "$comment: Human-readable topic name shown in the sidebar and page header, e.g. 'Stripe'",
+  "slug": "$comment: URL-safe id, lowercase-kebab-case, must match the folder name, e.g. 'stripe'",
+  "description": "$comment: One sentence shown under the topic title in the cover header",
+  "cover": "$comment: A single emoji used as the topic's cover icon, e.g. '💳'",
+
+  "tasks": [
+    {
+      "$comment": "Each task groups related tools. Task names must start with an imperative verb (Query, Build, Sync, Automate...) — validate.ts checks this against a known-verb list in src/lib/topics.ts.",
+      "task": "Verb-first task name, e.g. 'Process payments'",
+      "entries": [
+        {
+          "$comment": "Minimum 3 entries per task. Each entry is one tool/library/service.",
+          "name": "Package or product name, e.g. 'stripe-node'",
+          "language": "$comment: one of TypeScript | JavaScript | Python | Go | Rust | C | C++ | Any",
+          "specialty": "One short phrase describing what it does — must not be empty",
+          "docs": "$comment: must be an https:// URL to official docs",
+          "note": "$comment: optional extra context, leave as empty string if none",
+          "flags": []
+        },
+        {
+          "name": "second-entry-example",
+          "language": "Python",
+          "specialty": "Example second entry so this task starts valid at 3 minimum",
+          "docs": "https://example.com/docs",
+          "note": "",
+          "flags": ["paid"]
+        },
+        {
+          "name": "third-entry-example",
+          "language": "Any",
+          "specialty": "Example third entry — remove all examples once you add real ones",
+          "docs": "https://example.com/docs",
+          "note": "Windows only example",
+          "flags": ["windows-only"]
+        }
+      ]
+    }
+  ]
+}

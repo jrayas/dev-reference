@@ -1,0 +1,204 @@
+{
+  "$schema": "../schema.json",
+  "topic": "Notion",
+  "slug": "notion",
+  "description": "Tools, SDKs and integrations for the Notion ecosystem",
+  "cover": "🗂️",
+  "tasks": [
+    {
+      "task": "Query the API",
+      "entries": [
+        { "name": "notion-sdk-js", "language": "TypeScript", "specialty": "Official Notion JavaScript/TypeScript client for the REST API", "docs": "https://github.com/makenotion/notion-sdk-js", "note": "", "flags": [] },
+        { "name": "notion-sdk-py", "language": "Python", "specialty": "Community Python client that closely tracks the official REST API", "docs": "https://github.com/ramnes/notion-sdk-py", "note": "", "flags": [] },
+        { "name": "notionapi", "language": "Go", "specialty": "Actively maintained Go client for the Notion API (jomei/notionapi)", "docs": "https://github.com/jomei/notionapi", "note": "", "flags": [] },
+        { "name": "notion-client", "language": "Rust", "specialty": "Async Rust client crate for the Notion API", "docs": "https://github.com/takassh/notion-client", "note": "", "flags": [] },
+        { "name": "Postman", "language": "Any", "specialty": "GUI REST client for exploring and scripting Notion API requests", "docs": "https://www.postman.com", "note": "Free tier is generous; team collaboration features are paid.", "flags": ["paid"] },
+        { "name": "Insomnia", "language": "Any", "specialty": "Open-core REST/GraphQL client popular for testing Notion API calls", "docs": "https://insomnia.rest", "note": "Core client is free; team sync/collaboration is paid.", "flags": ["paid"] },
+        { "name": "HTTPie", "language": "Any", "specialty": "Friendly CLI HTTP client for quick, readable Notion API requests", "docs": "https://httpie.io", "note": "CLI is free/open source; hosted desktop app has paid plans.", "flags": ["paid"] },
+        { "name": "curl", "language": "Any", "specialty": "Universal command-line tool for calling the Notion REST API directly", "docs": "https://curl.se", "note": "", "flags": [] }
+      ]
+    },
+    {
+      "task": "Build integrations",
+      "entries": [
+        { "name": "Vercel", "language": "Any", "specialty": "Serverless hosting commonly used to deploy Notion integration backends", "docs": "https://vercel.com", "note": "Generous free tier; usage-based paid tiers beyond it.", "flags": ["paid"] },
+        { "name": "Netlify Functions", "language": "Any", "specialty": "Serverless functions platform used to host Notion webhook/integration endpoints", "docs": "https://www.netlify.com/products/functions/", "note": "", "flags": ["paid"] },
+        { "name": "Cloudflare Workers", "language": "Any", "specialty": "Edge compute platform for lightweight Notion integration endpoints", "docs": "https://developers.cloudflare.com/workers/", "note": "", "flags": ["paid"] },
+        { "name": "Express", "language": "JavaScript", "specialty": "Minimal Node.js web framework for building Notion integration servers", "docs": "https://expressjs.com", "note": "", "flags": [] },
+        { "name": "FastAPI", "language": "Python", "specialty": "Modern async Python web framework for building Notion integration APIs", "docs": "https://fastapi.tiangolo.com", "note": "", "flags": [] },
+        { "name": "Fiber", "language": "Go", "specialty": "Fast, Express-inspired Go web framework for Notion integration backends", "docs": "https://gofiber.io", "note": "", "flags": [] },
+        { "name": "ngrok", "language": "Any", "specialty": "Tunnels a local dev server so Notion webhooks can reach it during development", "docs": "https://ngrok.com", "note": "Free tier has one tunnel and random URLs; custom domains are paid.", "flags": ["paid"] },
+        { "name": "Zapier Platform CLI", "language": "JavaScript", "specialty": "Build and publish custom Zapier integrations that wrap the Notion API", "docs": "https://docs.zapier.com/integrations/build-cli/overview", "note": "", "flags": [] }
+      ]
+    },
+    {
+      "task": "Authenticate users",
+      "entries": [
+        { "name": "simple-oauth2", "language": "JavaScript", "specialty": "Generic OAuth2 client library usable for Notion's OAuth authorization flow", "docs": "https://github.com/lelylan/simple-oauth2", "note": "", "flags": [] },
+        { "name": "Authlib", "language": "Python", "specialty": "Python OAuth2/OpenID library usable for Notion integration login flows", "docs": "https://authlib.org", "note": "", "flags": [] },
+        { "name": "golang.org/x/oauth2", "language": "Go", "specialty": "Go's standard OAuth2 client package, usable for Notion's OAuth flow", "docs": "https://pkg.go.dev/golang.org/x/oauth2", "note": "", "flags": [] },
+        { "name": "oauth2-rs", "language": "Rust", "specialty": "Rust OAuth2 client crate implementing the authorization code flow", "docs": "https://github.com/ramosbugs/oauth2-rs", "note": "", "flags": [] },
+        { "name": "Auth.js", "language": "TypeScript", "specialty": "Auth framework (formerly NextAuth.js) configurable with a generic OAuth provider for Notion login", "docs": "https://authjs.dev", "note": "", "flags": [] },
+        { "name": "Passport.js", "language": "JavaScript", "specialty": "Node.js auth middleware with an OAuth2 strategy usable for Notion sign-in", "docs": "https://www.passportjs.org", "note": "", "flags": [] },
+        { "name": "Auth0", "language": "Any", "specialty": "Hosted identity platform that can front a custom Notion OAuth connection", "docs": "https://auth0.com", "note": "Free tier capped by monthly active users.", "flags": ["paid"] },
+        { "name": "mkcert", "language": "Any", "specialty": "Generates trusted local HTTPS certificates needed to test Notion OAuth redirect URIs locally", "docs": "https://github.com/FiloSottile/mkcert", "note": "", "flags": [] }
+      ]
+    },
+    {
+      "task": "Sync databases",
+      "entries": [
+        { "name": "n8n", "language": "Any", "specialty": "Workflow automation platform with a native Notion node for two-way database syncs", "docs": "https://n8n.io", "note": "Self-hosted is free (fair-code licence); cloud plans are paid.", "flags": ["paid"] },
+        { "name": "Zapier", "language": "Any", "specialty": "No-code automation platform with Notion triggers/actions for syncing databases", "docs": "https://zapier.com", "note": "Free tier capped on monthly tasks.", "flags": ["paid"] },
+        { "name": "Make", "language": "Any", "specialty": "Visual scenario builder with deep two-way Notion database sync modules", "docs": "https://www.make.com", "note": "Free tier capped on monthly operations.", "flags": ["paid"] },
+        { "name": "Airbyte", "language": "Any", "specialty": "Open-source data integration platform with a Notion source connector", "docs": "https://airbyte.com", "note": "Self-hosted OSS is free; Cloud is paid.", "flags": ["paid"] },
+        { "name": "Pipedream", "language": "Any", "specialty": "Serverless integration platform with prebuilt Notion database sync workflows", "docs": "https://pipedream.com", "note": "Free tier capped on monthly invocations.", "flags": ["paid"] },
+        { "name": "Fivetran", "language": "Any", "specialty": "Managed data pipeline connector for syncing Notion databases into a warehouse", "docs": "https://www.fivetran.com", "note": "", "flags": ["paid"] },
+        { "name": "Whalesync", "language": "Any", "specialty": "Real-time two-way sync tool built specifically for Notion databases", "docs": "https://www.whalesync.com", "note": "", "flags": ["paid"] },
+        { "name": "Coefficient", "language": "Any", "specialty": "Syncs Notion databases with Google Sheets and Excel in real time", "docs": "https://coefficient.io", "note": "", "flags": ["paid"] }
+      ]
+    },
+    {
+      "task": "Automate workflows",
+      "entries": [
+        { "name": "Notion Automations", "language": "Any", "specialty": "Native database automations: trigger a button or event, then run actions inside Notion", "docs": "https://www.notion.com/help/database-automations", "note": "Basic automations are on all plans; advanced triggers need a paid plan.", "flags": ["paid"] },
+        { "name": "IFTTT", "language": "Any", "specialty": "Simple trigger-action automation platform with a Notion service", "docs": "https://ifttt.com", "note": "Free tier capped at 2 applets.", "flags": ["paid"] },
+        { "name": "Workato", "language": "Any", "specialty": "Enterprise-grade integration and automation platform with Notion connectors", "docs": "https://www.workato.com", "note": "", "flags": ["paid"] },
+        { "name": "Tray.io", "language": "Any", "specialty": "Low-code automation platform for building Notion-connected workflows", "docs": "https://tray.ai", "note": "", "flags": ["paid"] },
+        { "name": "Google Apps Script", "language": "JavaScript", "specialty": "Serverless JS runtime for scripting scheduled Notion API automations from Sheets/Docs", "docs": "https://developers.google.com/apps-script", "note": "", "flags": [] },
+        { "name": "GitHub Actions", "language": "Any", "specialty": "CI/CD runner commonly used to schedule and run Notion automation scripts", "docs": "https://github.com/features/actions", "note": "Free minutes are capped per month for private repos.", "flags": ["paid"] },
+        { "name": "node-cron", "language": "JavaScript", "specialty": "Lightweight Node.js task scheduler for running custom Notion automation scripts", "docs": "https://github.com/node-cron/node-cron", "note": "", "flags": [] },
+        { "name": "APScheduler", "language": "Python", "specialty": "Python task scheduling library for running periodic Notion automation scripts", "docs": "https://apscheduler.readthedocs.io", "note": "", "flags": [] }
+      ]
+    },
+    {
+      "task": "Publish as a website",
+      "entries": [
+        { "name": "Super", "language": "Any", "specialty": "Turns a Notion page into a fully custom website with your own domain", "docs": "https://super.so", "note": "", "flags": ["paid"] },
+        { "name": "Potion", "language": "Any", "specialty": "Notion-to-website builder focused on SEO and page speed", "docs": "https://beta.potion.so", "note": "", "flags": ["paid"] },
+        { "name": "Fruition", "language": "Any", "specialty": "Free open-source script to publish a Notion page as a website on a custom domain", "docs": "https://github.com/stephenou/fruitionsite", "note": "", "flags": [] },
+        { "name": "Bullet", "language": "Any", "specialty": "No-code website builder that turns Notion content into a marketing site or blog", "docs": "https://bullet.so", "note": "", "flags": ["paid"] },
+        { "name": "Simple.ink", "language": "Any", "specialty": "Notion-to-website publishing tool with forms and password protection", "docs": "https://simple.ink", "note": "", "flags": ["paid"] },
+        { "name": "Oopy", "language": "Any", "specialty": "Notion-to-website service popular for blogs and landing pages", "docs": "https://oopy.io", "note": "", "flags": ["paid"] },
+        { "name": "Notaku", "language": "Any", "specialty": "Turns a Notion workspace into a full website, blog, docs site or store", "docs": "https://notaku.so", "note": "", "flags": ["paid"] },
+        { "name": "Feather", "language": "Any", "specialty": "Publishes Notion pages as fast static websites", "docs": "https://feather.so", "note": "", "flags": ["paid"] }
+      ]
+    },
+    {
+      "task": "Render pages",
+      "entries": [
+        { "name": "react-notion-x", "language": "TypeScript", "specialty": "Fast React renderer for Notion pages, including databases, embeds and collections", "docs": "https://github.com/NotionX/react-notion-x", "note": "", "flags": [] },
+        { "name": "@9gustin/react-notion-render", "language": "TypeScript", "specialty": "React component library for rendering pages fetched via the official Notion API", "docs": "https://github.com/9gustin/react-notion-render", "note": "", "flags": [] },
+        { "name": "remark", "language": "JavaScript", "specialty": "Markdown processor commonly used to render Notion-exported Markdown to HTML", "docs": "https://github.com/remarkjs/remark", "note": "", "flags": [] },
+        { "name": "unified", "language": "JavaScript", "specialty": "Content-processing ecosystem underlying the remark/rehype pipelines used to render Notion blocks", "docs": "https://unifiedjs.com", "note": "", "flags": [] },
+        { "name": "rehype", "language": "JavaScript", "specialty": "HTML processor plugin ecosystem used when rendering converted Notion content", "docs": "https://github.com/rehypejs/rehype", "note": "", "flags": [] },
+        { "name": "MDX", "language": "JavaScript", "specialty": "Combines Markdown with JSX, often used to render Notion content converted to Markdown inside React sites", "docs": "https://mdxjs.com", "note": "", "flags": [] },
+        { "name": "Prism.js", "language": "JavaScript", "specialty": "Lightweight syntax highlighter commonly used to render Notion code blocks", "docs": "https://prismjs.com", "note": "", "flags": [] },
+        { "name": "Shiki", "language": "TypeScript", "specialty": "VS Code-grade syntax highlighter popular for rendering Notion code blocks in static sites", "docs": "https://shiki.style", "note": "", "flags": [] }
+      ]
+    },
+    {
+      "task": "Convert Markdown",
+      "entries": [
+        { "name": "notion-to-md", "language": "TypeScript", "specialty": "Converts Notion pages and blocks to Markdown", "docs": "https://github.com/souvikinator/notion-to-md", "note": "", "flags": [] },
+        { "name": "martian", "language": "TypeScript", "specialty": "Converts Markdown into Notion API block format, the reverse direction", "docs": "https://github.com/tryfabric/martian", "note": "", "flags": [] },
+        { "name": "notion2md", "language": "Python", "specialty": "Python library to export Notion pages to Markdown files", "docs": "https://github.com/echo724/notion2md", "note": "", "flags": [] },
+        { "name": "notion-md-crawler", "language": "TypeScript", "specialty": "Crawls a Notion workspace and converts pages to Markdown in bulk", "docs": "https://github.com/TomPenguin/notion-md-crawler", "note": "", "flags": [] },
+        { "name": "Pandoc", "language": "Any", "specialty": "Universal document converter, often used to turn exported Notion HTML into other formats", "docs": "https://pandoc.org", "note": "", "flags": [] },
+        { "name": "turndown", "language": "JavaScript", "specialty": "Converts HTML, such as exported Notion pages, into Markdown", "docs": "https://github.com/mixmark-io/turndown", "note": "", "flags": [] },
+        { "name": "markdown-it", "language": "JavaScript", "specialty": "Fast, pluggable Markdown parser often paired with Notion-to-Markdown pipelines", "docs": "https://github.com/markdown-it/markdown-it", "note": "", "flags": [] },
+        { "name": "mistune", "language": "Python", "specialty": "Fast Python Markdown parser used alongside notion2md output", "docs": "https://github.com/lepture/mistune", "note": "", "flags": [] }
+      ]
+    },
+    {
+      "task": "Embed content",
+      "entries": [
+        { "name": "Notion embed block", "language": "Any", "specialty": "Native Notion block for embedding 1,900+ external content types (Figma, YouTube, CodeSandbox and more)", "docs": "https://www.notion.com/help/embed-and-connect-other-apps", "note": "", "flags": [] },
+        { "name": "react-tweet", "language": "TypeScript", "specialty": "Renders embedded tweets, commonly used alongside Notion-sourced content", "docs": "https://github.com/vercel/react-tweet", "note": "", "flags": [] },
+        { "name": "react-player", "language": "TypeScript", "specialty": "Embeds video and audio (YouTube, Vimeo and more) referenced from Notion pages", "docs": "https://github.com/CookPete/react-player", "note": "", "flags": [] },
+        { "name": "CodeSandbox", "language": "Any", "specialty": "Live code sandbox commonly embedded inside Notion pages for runnable demos", "docs": "https://codesandbox.io", "note": "", "flags": ["paid"] },
+        { "name": "Figma", "language": "Any", "specialty": "Design files commonly embedded inside Notion pages via the native embed block", "docs": "https://www.figma.com", "note": "", "flags": ["paid"] },
+        { "name": "Loom", "language": "Any", "specialty": "Screen recordings commonly embedded inside Notion pages", "docs": "https://www.loom.com", "note": "", "flags": ["paid"] },
+        { "name": "Miro", "language": "Any", "specialty": "Whiteboards commonly embedded inside Notion pages", "docs": "https://miro.com", "note": "", "flags": ["paid"] },
+        { "name": "Framer", "language": "Any", "specialty": "Interactive prototypes commonly embedded inside Notion pages", "docs": "https://www.framer.com", "note": "", "flags": ["paid"] }
+      ]
+    },
+    {
+      "task": "Import content",
+      "entries": [
+        { "name": "Notion native importers", "language": "Any", "specialty": "Built-in importers for Markdown/CSV/HTML, Evernote, Confluence, Trello, Asana and Google Docs", "docs": "https://www.notion.com/help/import-data-into-notion", "note": "", "flags": [] },
+        { "name": "csv2notion-neo", "language": "Python", "specialty": "CLI tool to upload and merge CSV/JSON data (including images) into a Notion database", "docs": "https://github.com/TheAcharya/csv2notion-neo", "note": "Actively maintained successor to the now-discontinued csv2notion.", "flags": [] },
+        { "name": "Parabola", "language": "Any", "specialty": "Visual no-code ETL tool commonly used to clean and load spreadsheet or API data into Notion databases", "docs": "https://parabola.io", "note": "", "flags": ["paid"] },
+        { "name": "Unito", "language": "Any", "specialty": "Two-way sync tool for importing Jira, Trello and Asana data into Notion", "docs": "https://unito.io", "note": "", "flags": ["paid"] },
+        { "name": "Coupler.io", "language": "Any", "specialty": "Imports and syncs spreadsheet and app data into Notion databases on a schedule", "docs": "https://www.coupler.io", "note": "", "flags": ["paid"] },
+        { "name": "Bardeen", "language": "Any", "specialty": "Browser automation tool with ready-made playbooks for scraping web data into Notion", "docs": "https://www.bardeen.ai", "note": "", "flags": ["paid"] },
+        { "name": "Portable.io", "language": "Any", "specialty": "Long-tail ETL connectors that can land data into Notion databases", "docs": "https://portable.io", "note": "", "flags": ["paid"] },
+        { "name": "openpyxl", "language": "Python", "specialty": "Reads Excel workbooks that are commonly scripted into Notion via the API", "docs": "https://openpyxl.readthedocs.io", "note": "", "flags": [] }
+      ]
+    },
+    {
+      "task": "Export content",
+      "entries": [
+        { "name": "Notion native export", "language": "Any", "specialty": "Built-in workspace or page export to Markdown, CSV, PDF or HTML", "docs": "https://www.notion.com/help/export-your-content", "note": "", "flags": [] },
+        { "name": "WeasyPrint", "language": "Python", "specialty": "HTML-to-PDF renderer commonly used to turn exported Notion HTML into polished PDFs", "docs": "https://weasyprint.org", "note": "", "flags": [] },
+        { "name": "Puppeteer", "language": "JavaScript", "specialty": "Headless Chrome automation often used to script Notion page exports to PDF or PNG", "docs": "https://pptr.dev", "note": "", "flags": [] },
+        { "name": "Playwright", "language": "TypeScript", "specialty": "Cross-browser automation framework used to script bulk Notion exports", "docs": "https://playwright.dev", "note": "", "flags": [] },
+        { "name": "rclone", "language": "Go", "specialty": "CLI tool for syncing exported Notion zip archives to cloud storage", "docs": "https://rclone.org", "note": "", "flags": [] },
+        { "name": "7-Zip", "language": "Any", "specialty": "Extracts the zip archives produced by Notion's export feature", "docs": "https://www.7-zip.org", "note": "Official builds are Windows only; use p7zip or Keka on Linux/Mac.", "flags": ["windows-only"] },
+        { "name": "Automa", "language": "Any", "specialty": "Free browser-extension automation tool usable to script recurring Notion exports", "docs": "https://goautoma.com", "note": "Core extension is free; optional cloud sync is paid. Rebranded from automa.site.", "flags": ["paid"] },
+        { "name": "Tabula", "language": "Any", "specialty": "Extracts tables from PDFs, useful when repurposing exported Notion documents", "docs": "https://tabula.technology", "note": "", "flags": [] }
+      ]
+    },
+    {
+      "task": "Back up workspaces",
+      "entries": [
+        { "name": "NotionBackups.com", "language": "Any", "specialty": "Scheduled automatic backups of a Notion workspace to cloud storage", "docs": "https://notionbackups.com", "note": "", "flags": ["paid"] },
+        { "name": "restic", "language": "Go", "specialty": "General-purpose encrypted backup tool commonly used to snapshot exported Notion archives", "docs": "https://restic.net", "note": "", "flags": [] },
+        { "name": "rsync", "language": "C", "specialty": "Classic file-sync tool used to mirror local Notion export folders to backup storage", "docs": "https://rsync.samba.org", "note": "Native on Linux/Mac; on Windows use WSL or a port such as cwRsync.", "flags": [] },
+        { "name": "Duplicati", "language": "Any", "specialty": "Free open-source backup tool with cloud targets, used to schedule Notion export backups", "docs": "https://duplicati.com", "note": "", "flags": [] },
+        { "name": "Borg Backup", "language": "Python", "specialty": "Deduplicating backup tool for archiving Notion export snapshots", "docs": "https://www.borgbackup.org", "note": "", "flags": [] },
+        { "name": "Kopia", "language": "Go", "specialty": "Cross-platform backup tool with snapshots and encryption for Notion exports", "docs": "https://kopia.io", "note": "", "flags": [] },
+        { "name": "AWS S3", "language": "Any", "specialty": "Common cloud storage target for automated Notion backup scripts", "docs": "https://aws.amazon.com/s3/", "note": "Always-free tier is limited; storage beyond it is paid.", "flags": ["paid"] },
+        { "name": "cron", "language": "C", "specialty": "Standard Unix scheduler used to trigger periodic Notion export/backup scripts", "docs": "https://man7.org/linux/man-pages/man8/cron.8.html", "note": "Not available natively on Windows; use Task Scheduler or WSL.", "flags": [] }
+      ]
+    },
+    {
+      "task": "Manage users",
+      "entries": [
+        { "name": "Notion member management", "language": "Any", "specialty": "Native workspace member, guest, group and role management", "docs": "https://www.notion.com/help/add-members-admins-guests-and-groups", "note": "", "flags": [] },
+        { "name": "Notion SCIM API", "language": "Any", "specialty": "SCIM endpoint for automated user provisioning and deprovisioning", "docs": "https://www.notion.com/help/provision-users-and-groups-with-scim", "note": "Requires a Notion Enterprise plan.", "flags": ["paid"] },
+        { "name": "Okta", "language": "Any", "specialty": "Identity provider with a Notion SCIM/SSO integration for centrally managing users", "docs": "https://www.okta.com", "note": "", "flags": ["paid"] },
+        { "name": "Microsoft Entra ID", "language": "Any", "specialty": "Identity provider (formerly Azure AD) commonly connected to Notion for SSO and provisioning", "docs": "https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id", "note": "", "flags": ["paid"] },
+        { "name": "OneLogin", "language": "Any", "specialty": "SSO and identity provider supporting Notion's SAML integration for user management", "docs": "https://www.onelogin.com", "note": "", "flags": ["paid"] },
+        { "name": "JumpCloud", "language": "Any", "specialty": "Directory platform supporting Notion SSO and user lifecycle management", "docs": "https://jumpcloud.com", "note": "Free tier capped at 10 users/devices.", "flags": ["paid"] },
+        { "name": "Google Workspace", "language": "Any", "specialty": "Common SSO source used to provision Notion accounts via Google sign-in", "docs": "https://workspace.google.com", "note": "", "flags": ["paid"] },
+        { "name": "Terraform", "language": "Go", "specialty": "Infrastructure-as-code commonly used to codify identity-provider config that feeds Notion SSO", "docs": "https://developer.hashicorp.com/terraform", "note": "", "flags": [] }
+      ]
+    },
+    {
+      "task": "Test locally",
+      "entries": [
+        { "name": "MSW", "language": "TypeScript", "specialty": "Mocks Notion API responses in tests by intercepting network requests at the worker level", "docs": "https://mswjs.io", "note": "", "flags": [] },
+        { "name": "nock", "language": "JavaScript", "specialty": "HTTP mocking library commonly used to stub Notion API calls in Node tests", "docs": "https://github.com/nock/nock", "note": "", "flags": [] },
+        { "name": "responses", "language": "Python", "specialty": "Mocks the requests library, commonly used to stub Notion API calls in Python tests", "docs": "https://github.com/getsentry/responses", "note": "", "flags": [] },
+        { "name": "gock", "language": "Go", "specialty": "HTTP mocking library for testing Go code that calls the Notion API", "docs": "https://github.com/h2non/gock", "note": "", "flags": [] },
+        { "name": "WireMock", "language": "Any", "specialty": "Standalone API mocking server usable to simulate the Notion API locally", "docs": "https://wiremock.org", "note": "Core server is free/open source; WireMock Cloud is paid.", "flags": ["paid"] },
+        { "name": "mockito", "language": "Rust", "specialty": "HTTP mocking library for testing Rust clients against a fake Notion API", "docs": "https://github.com/lipanski/mockito", "note": "Rust crate; not the Java library of the same name.", "flags": [] },
+        { "name": "Vitest", "language": "TypeScript", "specialty": "Fast test runner commonly used alongside MSW to test Notion integration code", "docs": "https://vitest.dev", "note": "", "flags": [] },
+        { "name": "pytest", "language": "Python", "specialty": "De facto Python test framework used to test Notion integration scripts", "docs": "https://docs.pytest.org", "note": "", "flags": [] }
+      ]
+    },
+    {
+      "task": "Connect AI agents",
+      "entries": [
+        { "name": "Notion MCP Server", "language": "TypeScript", "specialty": "Official Model Context Protocol server exposing Notion to AI agents and assistants", "docs": "https://github.com/makenotion/notion-mcp-server", "note": "", "flags": [] },
+        { "name": "LangChain", "language": "Python", "specialty": "LLM framework with Notion document loaders for building RAG agents over workspace content", "docs": "https://reference.langchain.com/python/langchain", "note": "", "flags": [] },
+        { "name": "LlamaIndex", "language": "Python", "specialty": "Data framework with a Notion reader for indexing workspace content for LLM agents", "docs": "https://www.llamaindex.ai", "note": "", "flags": [] },
+        { "name": "LangChain.js", "language": "TypeScript", "specialty": "JS/TS LLM framework with Notion document loaders for agent workflows", "docs": "https://reference.langchain.com/javascript/langchain", "note": "", "flags": [] },
+        { "name": "MCP TypeScript SDK", "language": "TypeScript", "specialty": "Official MCP SDK used to build custom Notion-connected MCP servers and clients", "docs": "https://github.com/modelcontextprotocol/typescript-sdk", "note": "", "flags": [] },
+        { "name": "MCP Python SDK", "language": "Python", "specialty": "Official Python MCP SDK for building Notion-connected tool servers for AI agents", "docs": "https://github.com/modelcontextprotocol/python-sdk", "note": "", "flags": [] },
+        { "name": "Zapier AI Actions", "language": "Any", "specialty": "Lets AI agents call Notion actions through Zapier's action layer", "docs": "https://zapier.com/ai", "note": "", "flags": ["paid"] },
+        { "name": "Composio", "language": "Any", "specialty": "Tool-integration platform providing ready-made Notion tools for AI agents", "docs": "https://composio.dev", "note": "Free tier capped on monthly tool calls.", "flags": ["paid"] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate topic data
+        run: npx tsx src/validate.ts
+
+      - name: Check docs links (warn only, never fails the build)
+        run: npx tsx src/check-links.ts
+        continue-on-error: true
+
+      - name: Build site
+        run: npx tsx src/build.ts
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+# ---------------------------------------------------------------------------
+# Alternative: push dist/ straight to a gh-pages branch instead of using the
+# official Pages actions above. Useful if Pages isn't set to the "GitHub
+# Actions" source, or you'd rather review the built output as real commits.
+# Swap the `deploy` job for this one (and set Pages' source to "Deploy from
+# a branch" -> gh-pages) if you prefer it:
+#
+#   deploy:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-node@v4
+#         with: { node-version: 22, cache: npm }
+#       - run: npm ci
+#       - run: npx tsx src/build.ts
+#       - uses: peaceiris/actions-gh-pages@v4
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_dir: ./dist
+# ---------------------------------------------------------------------------

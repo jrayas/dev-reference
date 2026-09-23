@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://dev-reference.local/topics/schema.json",
+  "title": "Topic data file",
+  "description": "One file per topic under topics/<slug>/data.json. See topics/_template/data.json for a commented example.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["topic", "slug", "description", "cover", "tasks"],
+  "properties": {
+    "topic": { "type": "string", "minLength": 1 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "description": { "type": "string", "minLength": 1 },
+    "cover": { "type": "string", "minLength": 1 },
+    "tasks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["task", "entries"],
+        "properties": {
+          "task": { "type": "string", "minLength": 1 },
+          "entries": {
+            "type": "array",
+            "minItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["name", "language", "specialty", "docs", "note", "flags"],
+              "properties": {
+                "name": { "type": "string", "minLength": 1 },
+                "language": {
+                  "type": "string",
+                  "enum": ["TypeScript", "JavaScript", "Python", "Go", "Rust", "C", "C++", "Any"]
+                },
+                "specialty": { "type": "string", "minLength": 1 },
+                "docs": { "type": "string", "format": "uri", "pattern": "^https://" },
+                "note": { "type": "string" },
+                "flags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["paid", "windows-only", "mac-only", "linux-only", "deprecated"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

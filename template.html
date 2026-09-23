@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Dev Reference</title>
+  <meta name="description" content="A cross-platform developer reference for API SDKs, integrations and tooling, organised by topic and task." />
+  <meta name="theme-color" content="#2383E2" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Applies the saved theme before first paint, to avoid a light/dark flash -->
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (t) document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="titlebar" data-tauri-drag-region>
+    <span class="titlebar__title" data-tauri-drag-region>Dev Reference</span>
+    <div class="titlebar__controls">
+      <button class="titlebar__btn" id="titlebar-min" aria-label="Minimise">
+        <svg width="10" height="10" viewBox="0 0 10 10"><path d="M0 5h10" stroke="currentColor"/></svg>
+      </button>
+      <button class="titlebar__btn" id="titlebar-max" aria-label="Maximise">
+        <svg width="10" height="10" viewBox="0 0 10 10"><rect x="0.5" y="0.5" width="9" height="9" stroke="currentColor" fill="none"/></svg>
+      </button>
+      <button class="titlebar__btn close" id="titlebar-close" aria-label="Close">
+        <svg width="10" height="10" viewBox="0 0 10 10"><path d="M0 0l10 10M10 0L0 10" stroke="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="app-shell" id="app-shell" data-sidebar="expanded">
+    <div class="mobile-bar">
+      <button class="icon-btn" data-open-sheet aria-label="Open topic menu">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 4h14M2 9h14M2 14h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <span class="mobile-bar__title">Dev Reference</span>
+      <button class="icon-btn" data-open-search aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M16 16l-3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="shell-body">
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <div class="sidebar__brand"><span>🗂️</span><span>Dev Reference</span></div>
+        <button class="sidebar__collapse icon-btn" id="sidebar-collapse-btn" aria-label="Collapse sidebar">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2v10M9 4l-3 3 3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <button class="sidebar__search" data-open-search type="button">
+        <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M16 16l-3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Search</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+      <nav class="sidebar__nav" aria-label="Topics">
+        <ul id="sidebar-nav"></ul>
+      </nav>
+      <div class="sidebar__footer">
+        <button class="icon-btn" id="theme-toggle" aria-pressed="false" aria-label="Toggle dark theme">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M13 3l-1.4 1.4M4.4 11.6L3 13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.3"/></svg>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main" id="main-scroll">
+      <div class="main__inner" id="main-inner"></div>
+    </main>
+    </div>
+  </div>
+
+  <!-- Search modal (Ctrl+K / Cmd+K / "/") -->
+  <div class="modal-overlay" id="search-overlay" data-open="false">
+    <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Search">
+      <div class="search-modal__input-row">
+        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M16 16l-3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <input class="search-modal__input" id="search-input" type="text" placeholder="Search tools, tasks, languages..." aria-label="Search" autocomplete="off" />
+        <span class="search-modal__esc">Esc</span>
+      </div>
+      <div class="search-modal__results" id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- Bottom sheet nav (mobile) -->
+  <div class="sheet-overlay" id="sheet-overlay" data-open="false">
+    <div class="bottom-sheet" id="bottom-sheet" role="dialog" aria-modal="true" aria-label="Topics">
+      <div class="bottom-sheet__handle"></div>
+      <ul id="sheet-nav" style="padding: 0 0.5rem 1rem"></ul>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden role="status" aria-live="polite">
+    <span class="toast__msg"></span>
+    <button class="toast__action" hidden></button>
+  </div>
+
+  <noscript>This reference needs JavaScript enabled to browse topics.</noscript>
+
+  <script type="application/json" id="seed-data">{{{seedJson}}}</script>
+  <script src="app.js" defer></script>
+</body>
+</html>
